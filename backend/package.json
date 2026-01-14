@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "jamilaBeulguibe",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
