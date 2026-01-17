@@ -34,4 +34,14 @@ const testConnection = async () => {
   }
 };
 
-module.exports = { sequelize, testConnection };
+const syncDatabase = async (force = false) => {
+  try {
+    await sequelize.sync({ force, alter: !force });
+    logger.info(`Synchronisation base de données ${force ? '(FORCE)' : ''}réussie`);
+  } catch (error) {
+    logger.error('Erreur synchronisation base de données:', error);
+    throw error;
+  }
+};
+
+module.exports = { sequelize, testConnection, syncDatabase }
